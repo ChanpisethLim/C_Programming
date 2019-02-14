@@ -33,7 +33,7 @@ main()
 			printf("The answer is %f",c);
 			break;
 		default :
-			puts("Error 404");
+			puts("Syntax Error");
 	}
 }
 
