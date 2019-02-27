@@ -1,39 +1,58 @@
 #include <stdio.h>
-main()
+#include <math.h>
+int choice(int e, int f);
+int main()
 {
-	char chc;
 	float a,b,c;
-	puts("+ for Addiction");
-	puts("- for Substraction");
-	puts("* for Multiplication");
-	puts("/ for Division");
+	printf("Enter the value for a and b: \n");
+	scanf("%f %f",&a, &b);
+	c = choice(a,b);
+	printf("The result is %f \n", c);
+	main();
+	return 0;
+}
+int choice(int e, int f)
+{
+	char oper;
+	int d;
+	puts("\t Menu");
+	puts("press + for Addiotion");
+	puts("press - for Substraction");
+	puts("press * for Multiplication");
+	puts("press / for Division");
+	puts("press ^ for Power");
+	puts("press @ for Square Root");
+	
 	puts("Select your choice :");
 	fflush (stdin);
-	chc = getchar();
-	printf("Enter the value for a :");
-	scanf("%f",&a);
-	printf("Enter the value for b :");
-	scanf("%f",&b);
-	switch(chc)
+	oper=getchar();
+	switch(oper)
 	{
-		case '+' :
-			c=a+b;
-			printf("The answer is %f",c);
+		case '+':
+			return d=e+f;
 			break;
-		case '-' :
-			c=a-b;
-			printf("The answer is %f",c);
+		case '-':
+			return d=e-f;
 			break;
-		case '*' :
-			c=a*b;
-			printf("The answer is %f",c);
+		case '*':
+			return d=e*f;
 			break;
-		case '/' :
-			c=a/b;
-			printf("The answer is %f",c);
+		case '/':
+			return d=e/f;
 			break;
-		default :
-			puts("Syntax Error");
+		case '^':
+			return d= pow(e,f);
+			break;
+		case '@':
+			return d= sqrt(e);
+			break;
+		default:
+			printf("Please enter a valid choice \n");
+			choice(e,f);	
 	}
 }
+
+
+
+
 
