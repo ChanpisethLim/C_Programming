@@ -1,75 +1,38 @@
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
 main()
 {
-	char chc;
-	float a,b,c;
-	puts("+ for Addiction");
-	puts("- for Substraction");
-	puts("* for Multiplication");
-	puts("/ for Division");
-	puts("^ for power");
-	puts("@ for radical calculation");
-	puts("Select your choice :");
-	fflush (stdin);
-	chc = getchar();
-	switch(chc)
-	{
-		case '+' :
-			printf("Enter the value for a to add b:");
-			printf("Enter the value for a: ");
-			scanf("%f", &a);
-			printf("Enter the value for b: ");
-			scanf("%f",&b);
-			c=a+b;
-			printf("The answer is %f",c);
+	int a,b,op,res;
+	puts("Enter number for a:");
+	scanf("%d",&a);
+	puts("Enter number for b:");
+	scanf("%d",&b);
+	puts("Calculator's menu");
+	puts("1.Addition");
+	puts("2.Subtraction");
+	puts("3.Multiplication");
+	puts("4.Division");
+	puts(" ");
+	puts("Enter ur calculation choice:");
+	scanf("%d",&op);
+	
+	switch(op){
+		case 1:
+			res= a + b;
+			printf("The answer is:%d",res);
 			break;
-		case '-' :
-			printf("Enter the value for a: ");
-			scanf("%f",&a);
-			printf("Enter the value for b: ");
-			scanf("%f",&b);
-			c=a-b;
-			printf("The answer is %f",c);
+		case 2:
+			res= a-b;
+			printf("The answer is:%d",res);
 			break;
-		case '*' :
-			printf("Enter the value for a: ");
-			scanf("%f", &a);
-			printf("Enter the value for b: ");
-			scanf("%f",&b);
-			c=a*b;
-			printf("The answer is %f",c);
+		case 3:
+			res= a*b;
+			printf("The answer is:%d",res);
 			break;
-		case '/' :
-			printf("Enter the value for a to divide b:");
-			printf("Enter the value for a: ");
-			scanf("%f", &a);
-			printf("Enter the value for b: ");
-			scanf("%f",&b);
-			c=a/b;
-			printf("The answer is %f",c);
+		case 4:
+			res= a/b;
+			printf("The answer is:%d",res);
 			break;
-		case '^':
-			printf("Enter the value for a as main number and for b as the power:\n");
-			printf("Enter the value for a: ");
-			scanf("%f", &a);
-			printf("Enter the value for b: ");
-			scanf("%f",&b);
-			c=pow(a,b);
-			printf("The answer is %f",c);
-			break;
-		case '@':
-			printf("Enter the value for a as the radicand and for b as the degree:\n");
-			printf("Enter the value fot a: ");
-			scanf("%f", &a);
-			printf("Enterh the value for b: ");
-			scanf("%f", &b);
-			c=pow(a,1/b);
-			printf("The answer is %f", c);
-			break;
-		default :
-			puts("Syntax Error");
-	}
+		default:
+			printf("Invalid Choice.");
+	}	
 }
-
-
