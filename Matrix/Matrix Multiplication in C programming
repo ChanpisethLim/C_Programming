@@ -1,0 +1,68 @@
+#include <stdio.h>
+main()
+{
+	int rf,cf,rs,cs,i,j,sum=0,k,mfirst[10][10],msecond[10][10],res[10][10];
+	puts("Enter the number of row and column for first matrix : ");
+	scanf("%d%d",&rf,&cf);
+	puts("Enter the value of the first matrix : ");
+	for(i=0;i<rf;i++)
+		for(j=0;j<cf;j++)
+		{
+			printf("R%d , C%d : ",i+1,j+1);
+			scanf("%d",&mfirst[i][j]);
+		}
+			puts("");
+			
+	for(i=0;i<rf;i++)
+	{
+		for(j=0;j<cf;j++)
+		{
+			printf("%d\t",mfirst[i][j]);
+		}
+		puts("");
+	}
+	
+	puts("Enter the number of row and column for second matrix : ");
+	scanf("%d%d",&rs,&cs);
+	if(cf != rs)
+	puts("\nThis matrix can not multiply");
+	else
+	{
+		puts("Enter the value for the second matrix : ");
+		for(i=0;i<rs;i++)
+			for(j=0;j<cs;j++)
+			{
+				printf("R%d , C%d : ",i+1,j+1);
+				scanf("%d",&msecond[i][j]);
+			}
+				puts("");
+		
+		for(i=0;i<rs;i++)
+		{
+			for(j=0;j<cs;j++)
+			{
+				printf("%d\t",msecond[i][j]);
+			}
+			puts("");
+		}
+		
+		for(i=0;i<rf;i++)
+			for(j=0;j<cs;j++)
+			{
+				for(k=0;k<rs;k++)
+				{
+					sum += mfirst[i][k]*msecond[k][j];
+				}
+				res[i][j] = sum;
+				sum=0;		
+			}
+			
+		puts("\n------------The answer is : ");
+		for(i=0;i<rf;i++)
+		{
+			for(j=0;j<cs;j++)
+				printf("%d\t",res[i][j]);
+			puts("");
+		}	
+	}
+}
