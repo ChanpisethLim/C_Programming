@@ -47,16 +47,13 @@ main()
 			puts("");
 		}
 		
-		for(i=0;i<rf;i++)
-			for(j=0;j<cf;j++)
-				sum[i][j] = first[i][j]+second[i][j];
-		
 		puts("\n-----------The answer is : ");
 		for(i=0;i<rf;i++)
 		{
 			for(j=0;j<cf;j++)
 			{
-				printf("%d\t",sum[i][j]);
+				sum[i][j] = first[i][j]+second[i][j];
+				printf("%d\t",sum[i][j]);	
 			}
 			puts("");
 		}	
