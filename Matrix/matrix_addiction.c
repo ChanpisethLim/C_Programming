@@ -59,9 +59,6 @@ main()
 				printf("%d\t",sum[i][j]);
 			}
 			puts("");
-		}
-			
-			
-				
+		}	
 	}
 }	
